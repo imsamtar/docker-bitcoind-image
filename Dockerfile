@@ -84,7 +84,7 @@ RUN apt update -y \
 
 RUN sed -i \
     -e 's/#SocksPort 192.168.0.1:9100/SocksPort 127.0.0.1:9050/g' \
-    -e 's/#ControlPort 9051/ControlPort 127.0.0.1:9051/g' \
+    -e 's/#ControlPort 9051/ControlPort 0.0.0.0:9051/g' \
     /etc/tor/torrc \
     && mkdir /etc/torrc.d \
     && echo "%include /etc/torrc.d/" >> /etc/tor/torrc
